@@ -14,6 +14,7 @@ O layout do projeto está disponível no Figma:
 - React Router
 - React Query
 - Axios
+- Tailwind CSS
 
 ## Arquitetura do Projeto
 
@@ -26,37 +27,46 @@ src/
   │       ├── components/ # Componentes específicos da página
   │       ├── services/   # Serviços e chamadas à API
   │       ├── types/      # Tipagens TypeScript
-  │       ├── index.tsx   # Componente principal
-  │       └── styles.css  # Estilos da página
-  ├── services/           # Serviços globais (ex: configuração do axios)
+  │       └── index.tsx   # Componente principal
+  ├── services/           # Serviços globais
   └── types/              # Tipagens globais
 ```
 
 ### Padrões a Seguir
 
-1. **Componentes**
+1. **Mobile First & Responsividade**
+   - Desenvolver primeiro para mobile
+   - Usar breakpoints do Tailwind (sm, md, lg, xl)
+   - Testar em diferentes tamanhos de tela
+   - Exemplo de classe responsiva:
+     ```tsx
+     className="text-sm md:text-base lg:text-lg"
+     ```
+
+2. **Tailwind CSS**
+   - Usar classes utilitárias do Tailwind
+   - Seguir o padrão de cores definido
+   - Criar componentes reutilizáveis com @apply quando necessário
+   - Exemplo de componente:
+     ```tsx
+     <div className="container-padding max-w-7xl mx-auto">
+       <h1 className="text-xl md:text-2xl font-bold text-text-primary">
+         Título
+       </h1>
+     </div>
+     ```
+
+3. **Componentes**
    - Um componente por arquivo
    - Usar TypeScript para props
    - Documentar componentes complexos
    - Manter componentes pequenos e focados
 
-2. **Estilos**
-   - CSS Modules ou arquivos CSS separados
-   - Nomenclatura BEM para classes
-   - Mobile-first
-   - Variáveis CSS para cores e medidas
-
-3. **Chamadas à API**
+4. **Chamadas à API**
    - Usar o serviço de exemplo como base
    - Centralizar chamadas em arquivos de serviço
-   - Usar TypeScript para requests/responses
+   - Usar React Query para cache e loading states
    - Tratar erros adequadamente
-
-4. **Estado e Cache**
-   - Usar React Query para chamadas à API
-   - Implementar loading states
-   - Tratar erros globalmente
-   - Persistir dados entre páginas
 
 5. **TypeScript**
    - Definir interfaces para todos os tipos
