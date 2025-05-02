@@ -92,7 +92,7 @@ yarn install
 ```
 3. Crie um arquivo `.env` na raiz do projeto com a URL da API:
 ```
-VITE_API_URL=https://run.mocky.io/v3/d5db7020-67c5-4619-9593-cf9faf591538
+VITE_API_URL=https://run.mocky.io/v3/
 ```
 4. Inicie o servidor de desenvolvimento:
 ```bash
