@@ -1,8 +1,8 @@
 
 export function CartScreen() {
     return (
-        <header className="tex-red-500">
-            <h1>Bag</h1>
-        </header>
+        <div>
+            <h1>Hello Word</h1>
+        </div>
     )
 }
