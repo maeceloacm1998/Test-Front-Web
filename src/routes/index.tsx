@@ -1,11 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Example from '../screens/Example';
+import CartScreen from '../screens/CartScreen';
 
 const AppRoutes: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<Example />} />
+      <Route path="/" element={< CartScreen />} />
       {/* Adicione novas rotas aqui */}
       {/* Exemplo: <Route path="/about" element={<About />} /> */}
     </Routes>
